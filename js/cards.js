@@ -17,11 +17,6 @@ function chooseLevel(){
     console.log(level)
 
 }
-
-
-// let nameCardNotRandom = ['buom', 'chim', 'chuot', 'coc', 'ghost', 'nuoc', 'rong', 'sau','buom', 'chim', 'chuot', 'coc', 'ghost', 'nuoc', 'rong', 'sau'];
-
-
 // Giao dien the = table:
 function gameInterface() {
     let tablePlay = '<table class="table">'
@@ -34,7 +29,7 @@ function gameInterface() {
             } else {
                 urlCard = "image/giphy.gif"
             }
-            tablePlay += `<td class="table"> <img width="630" height="630" src= ${urlCard} alt="error" onclick="clickCard(${l},${m})"></td>`
+            tablePlay += `<td class="table"> <img src= ${urlCard} alt="error" onclick="clickCard(${l},${m})"></td>`
         }
     }
     document.getElementById('display').innerHTML = tablePlay;

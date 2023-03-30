@@ -3,18 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <title>Memory Card</title>
-  <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 <h1 class="container">Memory Card: Pokemon</h1>
-<label for="levelGame" class="headerAndInner"> Select Level</label>
-<select id="levelGame" class="headerAndInner" onchange="chooseLevel()">
-    <option value=2 id="lv1"> Level 1 (4 cards) </option>
-    <option value=4 id="lv2"> Level 2 (16 cards) </option>
-</select>
-<br>
-<button class="btnStart" type="button" id="startGame" onclick="startGame()">Start</button>
+<label id="labelLV" for="levelGame" class="headerAndInner"> <b>Select Level</b> </label>
+<div class="headerAndInner">
+    <select id="levelGame" class="headerAndInner" onchange="chooseLevel()">
+        <option value=2 id="lv1"> Level 1 (4 cards)</option>
+        <option value=4 id="lv2"> Level 2 (16 cards)</option>
+    </select>
+    <button class="btnStart" type="button" id="startGame" onclick="startGame()">Start</button>
+</div>
 <p id="display" class="displayTable"></p>
-<script src="js/cards.js" ></script>
+<script src="js/cards.js"></script>
 </body>
 </html>

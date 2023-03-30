@@ -1,34 +1,70 @@
+
 .container {
     font-family: fantasy;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    font-size: 100px;
+    font-size: 30px;
 }
 .headerAndInner {
-    width: 580px;
+    width: 300px;
     background-color: floralwhite;
     display: flex;
     text-align: left;
-    font-size: 60px;
+    font-size: 15px;
     margin: 0 auto;
 }
+#levelGame{
+    border-radius: 10px;
+    background-color:lightcyan;
+}
+#levelGame:hover{
+    cursor: pointer;
+    background-color: lightblue;
+}
+#labelLV{
+    background-color: white;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+
+}
 .btnStart {
-    width: 580px;
+    width: 100px;
+    padding: 10px 0px;
+    border-radius: 10px;
     background-color: lightcyan;
     display: flex;
     justify-content: center;
-    font-size: 60px;
-    margin: 0 auto;
+    font-size: 15px;
+    margin-left: 5px;
+    cursor: pointer;
+}
+.btnStart:hover{
+    background-color: lightblue;
 }
 .displayTable {
     display: flex;
     justify-content: center;
 }
 .table {
+    border-collapse: collapse;
     border: 1px solid wheat;
-    width: 500px;
     border-spacing: 1px;
-    padding: 2px;
+
+}
+td {
+    width: 150px;
+    height: 150px;
+    cursor: pointer;
+    padding: 0;
+    /*margin: 0;*/
+}
+tr{
+    /*width: 150px;*/
+    height: 150px;
+}
+img{
+    width:154px;
+    height:154px;
 }
