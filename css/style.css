@@ -10,13 +10,13 @@
     width: 580px;
     background-color: floralwhite;
     display: flex;
-    justify-content: center;
+    text-align: left;
     font-size: 60px;
     margin: 0 auto;
 }
 .btnStart {
     width: 580px;
-    background-color: darkgrey;
+    background-color: lightcyan;
     display: flex;
     justify-content: center;
     font-size: 60px;
@@ -31,7 +31,4 @@
     width: 500px;
     border-spacing: 1px;
     padding: 2px;
-
-
-    /*border="1" cellspacing="1" width="500"*/
 }
