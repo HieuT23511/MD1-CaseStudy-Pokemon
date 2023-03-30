@@ -9,15 +9,47 @@ class Cards {
     }
 }
 
-// Tao mang 2 chieu la cac doi tuong cards:
+function startGame() {
+    // Tạo mảng tên thẻ, xử lí random thẻ khi render sau khi onclick Start Button
+    let name8Cards = ['buom', 'chim', 'chuot', 'coc', 'ghost', 'nuoc', 'rong', 'sau'];
+    let nameCardNotDup = [];
+    if (level === 2) {
+        for (let a = 0; a < level; a++) {
+            nameCardNotDup.push(name8Cards[a]);
+        }
+    } else {
+        for (let a = 0; a < level * 2; a++) {
+            nameCardNotDup.push(name8Cards[a]);
+        }
+    }
+    let nameCardNotRandom = nameCardNotDup.concat(nameCardNotDup)
+
+    console.log(nameCardNotDup);
+    console.log(nameCardNotRandom);
+
+    listCards = []
+    let nameCards = nameCardNotRandom.sort(() => Math.random() - 0.5); // Random nameCards
+    let count = 0;
+    // Tạo mảng 2 chiều là các đối tượng cards:
+    for (let i = 0; i < level; i++) {
+        listCards.push([]);
+        for (let j = 0; j < level; j++) {
+            listCards[i][j] = new Cards(nameCards[count]);
+            count++;
+        }
+    }
+    gameInterface()
+}
+
 let listCards = [];
 let level = 2;
-function chooseLevel(){
-    level = +document.getElementById('levelGame').value;
-    console.log(level)
 
+function chooseLevel() {
+    level = +document.getElementById('levelGame').value;
 }
-// Giao dien the = table:
+
+
+// Tạo giao diện chơi dưới dạng table:
 function gameInterface() {
     let tablePlay = '<table class="table">'
     for (let l = 0; l < listCards.length; l++) {
@@ -35,7 +67,7 @@ function gameInterface() {
     document.getElementById('display').innerHTML = tablePlay;
 }
 
-// Xu li khi onclick vao the:
+// Xử lí khi onclick vào thẻ img:
 let checkMatch = [];
 let matchCount = 0;
 
@@ -43,7 +75,7 @@ function clickCard(l, m) {
     listCards[l][m].status = true;
     gameInterface()
     checkMatch.push(listCards[l][m]);
-    if (checkMatch.length === 2){
+    if (checkMatch.length === 2) {
         if (checkMatch[0].name === checkMatch[1].name) {
             checkMatch[0].status = true;
             checkMatch[1].status = true;
@@ -68,8 +100,7 @@ function clickCard(l, m) {
     }, 800)
     // Điều kiện end game : mở full thẻ bài match.
     setTimeout(() => {
-        if (matchCount === (listCards.length * listCards[0].length)/2) {
-            // alert(`Nice! You win`)
+        if (matchCount === (listCards.length * listCards[0].length) / 2) {
             if (confirm('Nice. You win! Do you want play again?')) {
 
                 location.reload();
@@ -79,34 +110,6 @@ function clickCard(l, m) {
         }
     }, 300)
 }
-function startGame(){
-    let name8Cards =['buom', 'chim', 'chuot', 'coc', 'ghost', 'nuoc', 'rong', 'sau'];
-    let nameCardNotDup = [];
-    if (level===2){
-        for (let a = 0; a < level; a++) {
-            nameCardNotDup.push(name8Cards[a]);
-        }
-    }else {
-        for (let a = 0; a < level*2; a++) {
-            nameCardNotDup.push(name8Cards[a]);
-        }
-    }
-    let nameCardNotRandom = nameCardNotDup.concat(nameCardNotDup)
 
-    console.log(nameCardNotDup);
-    console.log(nameCardNotRandom);
-
-    listCards = []
-    let nameCards = nameCardNotRandom.sort(() => Math.random() - 0.5); // Random nameCards
-    let count = 0;
-    for (let i = 0; i < level; i++) {
-        listCards.push([]);
-        for (let j = 0; j < level; j++) {
-            listCards[i][j] = new Cards(nameCards[count]);
-            count++;
-        }
-    }
-    gameInterface()
-}
 
 
