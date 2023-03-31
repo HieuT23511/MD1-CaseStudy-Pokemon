@@ -10,6 +10,8 @@ class Cards {
 }
 
 function startGame() {
+    let audioBackgroud = document.getElementById('audioBackgroud')
+    audioBackgroud.play();
     // Tạo mảng tên thẻ, xử lí random thẻ khi render sau khi onclick Start Button
     let name8Cards = ['buom', 'chim', 'chuot', 'coc', 'ghost', 'nuoc', 'rong', 'sau'];
     let nameCardNotDup = [];
@@ -42,12 +44,11 @@ function startGame() {
 }
 
 let listCards = [];
+// Lấy giá trị của thẻ select khi chọn cấp độ để tạo mảng 2 chiều table tương ứng
 let level = 2;
-
 function chooseLevel() {
     level = +document.getElementById('levelGame').value;
 }
-
 
 // Tạo giao diện chơi dưới dạng table:
 function gameInterface() {

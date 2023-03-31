@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
     <meta charset="UTF-8">
     <title>Memory Card</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
 <h1 class="container">Memory Card: Pokemon</h1>
 <label id="labelLV" for="levelGame" class="headerAndInner"> <b>Select Level</b> </label>
@@ -15,6 +17,7 @@
     </select>
     <button class="btnStart" type="button" id="startGame" onclick="startGame()">Start</button>
 </div>
+<audio id="audioBackgroud"><source src="audio/audioPokemon.mp3"></audio>
 <p id="display" class="displayTable"></p>
 <script src="js/cards.js"></script>
 </body>
